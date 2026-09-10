@@ -12,28 +12,28 @@ Before moving a User Story to "Ready for Sprint", verify:
 
 ### Clarity
 
-- [ ] The story is written in the format: **As [role], I want [action], so that [benefit]**
-- [ ] The role is specific (not "as a user" — "as an authenticated buyer")
+- [x] The story is written in the format: **As [role], I want [action], so that [benefit]**
+- [x] The role is specific (not "as a user" — "as an authenticated buyer")
 - [ ] The expected benefit is clear and verifiable
 
 ### Acceptance Criteria
 
 - [ ] There are at least 2 acceptance criteria written in **Given / When / Then** format
-- [ ] The criteria cover the happy path AND the main error cases
+- [x] The criteria cover the happy path AND the main error cases
 - [ ] The criteria are testable (it is possible to write an automated test for each one)
-- [ ] There are no ambiguous criteria ("the response should be fast" is not valid)
+- [x] There are no ambiguous criteria ("the response should be fast" is not valid)
 
 ### Dependencies
 
-- [ ] All external dependencies (other services, APIs, data) are identified
+- [x] All external dependencies (other services, APIs, data) are identified
 - [ ] Blocking dependencies are resolved OR a workaround is defined
-- [ ] If it depends on another story, that story is already Done or In Progress
+- [x] If it depends on another story, that story is already Done or In Progress
 
 ### Estimation
 
 - [ ] The team has estimated the story (story points or t-shirt size)
-- [ ] There is agreement that the story fits in one sprint
-- [ ] If it's too large, it has been broken down into smaller stories
+- [x] There is agreement that the story fits in one sprint
+- [x] If it's too large, it has been broken down into smaller stories
 
 ### Technical readiness
 
@@ -44,9 +44,9 @@ Before moving a User Story to "Ready for Sprint", verify:
 
 ### Non-functional requirements
 
-- [ ] Performance requirements are specified (if applicable)
-- [ ] Security requirements are considered (authentication, authorization, validations)
-- [ ] Observability requirements are included (logs, metrics, traces)
+- [x] Performance requirements are specified (if applicable)
+- [x] Security requirements are considered (authentication, authorization, validations)
+- [x] Observability requirements are included (logs, metrics, traces)
 
 ---
 

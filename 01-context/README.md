@@ -1,105 +1,103 @@
-# 01 — Project Context
+# 01 — Contexto del Proyecto
 
-> **What is this?** The "why" of the system. Anyone new must be able to read this
-> folder and understand what problem the project solves, what it includes, and what it does NOT include.
+> **¿Qué es esto?** El "porqué" de Servi Te&Pro. Cualquier persona nueva en el proyecto debe poder leer esta carpeta y comprender qué problema resuelve el sistema, a quién está dirigido, qué incluye y qué se ha decidido deliberadamente dejar fuera.
 
-## Why this section exists
+## Por qué existe esta sección
 
-Before designing anything, the team needs to agree on:
-- What problem are we solving?
-- For whom?
-- What is in scope and what is out of scope?
-- What does each term we use mean?
+Antes de diseñar e implementar el sistema, el equipo debe estar de acuerdo sobre:
 
-Without this, each team member works with different assumptions and the project fragments.
+* ¿Qué problema estamos resolviendo?
+* ¿Para quién estamos resolviendo este problema?
+* ¿Qué está dentro y qué está fuera del alcance?
+* ¿Qué significa cada término empresarial y técnico?
+* ¿Cuáles son los límites actuales del proyecto?
 
----
-
-## What is here and how to fill it in
+## Qué contiene esta sección y cómo completarla
 
 ### `overview.md` ⭐
-Executive description of the system in maximum 1 page.
-**Fill in:** system name, problem it solves, main users, key technologies,
-current status (under construction / in production / legacy).
 
-**Suggested format:**
-```markdown
-## What is [System Name]?
-[2-3 sentences: what it is and what it's for]
+Descripción ejecutiva del proyecto, con una extensión máxima de una página.
 
-## Problem it solves
-[The user's pain before this system]
+Debe incluir:
 
-## Main users
-- [Role 1]: [what they do in the system]
-- [Role 2]: [what they do in the system]
+* Nombre del sistema.
+* Problema que resuelve.
+* Usuarios principales.
+* Tecnologías principales.
+* Estado actual del proyecto.
 
-## Technology stack
-- Backend: [language/framework]
-- Database: [engine]
-- Infrastructure: [Docker/K8s/Cloud]
+Formato sugerido:
+
+```text
+## ¿Qué es Servi Te&Pro?
+
+[2-3 oraciones que describan el sistema...]
+
+## Problema que resuelve
+
+[Descripción del problema...]
+
+## Usuarios principales
+
+- Cliente...
+- Técnico...
+- Administrador...
+
+## Stack tecnológico
+
+- Frontend...
+- Backend...
+- Base de datos...
+- Infraestructura...
 ```
 
 ### `scope.md` ⭐
-System boundaries: what it does and what it does NOT do.
-**Fill in:** explicit list of what is INSIDE and OUTSIDE the MVP scope and future versions.
-This prevents scope creep (the system that grows without control).
 
-**Format:**
-```markdown
-## In scope (MVP)
-- [Feature 1]
-- [Feature 2]
+Define los límites del proyecto:
 
-## Out of scope (MVP)
-- [What we deliberately do NOT do]
-
-## Candidates for future versions
-- [What might come later]
-```
+* Qué está incluido en el alcance.
+* Qué está fuera del alcance.
+* Qué funcionalidades podrían incorporarse en versiones futuras.
 
 ### `glossary.md` ⭐
-Dictionary of the project domain.
-**Fill in:** all technical and business terms used in the project, with their exact definition.
-If two people define "client" differently, the system will have bugs.
 
-**Format:**
-```markdown
-| Term | Definition | Synonyms | Notes |
-|------|-----------|----------|-------|
-| [Term] | [Precise definition in the context of this system] | [if any] | [if applicable] |
-```
+Diccionario de términos empresariales y técnicos utilizados en el proyecto.
 
 ### `_template-project-profile.md`
-Project technical sheet for internal records.
-**Fill in:** when the project is formalized (official name, tech lead, dates, stakeholders).
+
+Plantilla para definir el perfil técnico y organizacional del proyecto.
 
 ### `_template-scope-declaration.md`
-Formal scope declaration template for presentations or deliverables.
 
----
+Plantilla para realizar una declaración formal del alcance del proyecto.
 
-## Correlations with other sections
+## Relación con otras secciones
 
-| If you change this... | Also review... |
-|-----------------------|----------------|
-| The problem described in `overview.md` | Product vision in `03-product/vision.md` |
-| The scope in `scope.md` | Requirements in `04-requirements/`, PRD in `03-product/` |
-| A term in `glossary.md` | Every document where that term appears |
+* Problema definido en `overview.md` ↔ `03-product/vision.md`
+* Alcance ↔ `04-requirements` y `03-product`
+* Términos del glosario ↔ Todos los documentos
+* Stack tecnológico ↔ `05-architecture`
+* Límites del proyecto y supuestos principales ↔ `02-domain` y `05-architecture`
 
----
+## Orden recomendado para completar esta sección
 
-## Recommended fill order
+1. `overview.md`
+2. `scope.md`
+3. `glossary.md`
 
-1. `overview.md` — 30 minutes with the full team
-2. `scope.md` — 1 hour of discussion (the most valuable thing you can do at the start)
-3. `glossary.md` — grows throughout the project, start with 10 key terms
+## Preguntas que esta sección debe responder
 
----
+* ¿Qué es Servi Te&Pro?
+* ¿Qué problema resuelve?
+* ¿Quiénes son sus usuarios?
+* ¿Cuál es el alcance del proyecto?
+* ¿Qué funcionalidades están incluidas?
+* ¿Qué funcionalidades están excluidas?
+* ¿Qué términos debemos conocer para comprender el proyecto?
+* ¿Cuáles son los límites y supuestos actuales?
 
-## Questions this section must answer
+## Estado actual
 
-- What does this system exist for?
-- Who are the users?
-- What does the system NOT do?
-- What does [term X] mean in this project?
+**En construcción**
+
+Servi Te&Pro se encuentra actualmente en las fases de análisis, definición de requerimientos, diseño y construcción.

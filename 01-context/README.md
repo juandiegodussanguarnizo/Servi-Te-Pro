@@ -1,103 +1,40 @@
-# 01 — Contexto del Proyecto
+# Servi Te&Pro — Glosario
 
-> **¿Qué es esto?** El "porqué" de Servi Te&Pro. Cualquier persona nueva en el proyecto debe poder leer esta carpeta y comprender qué problema resuelve el sistema, a quién está dirigido, qué incluye y qué se ha decidido deliberadamente dejar fuera.
-
-## Por qué existe esta sección
-
-Antes de diseñar e implementar el sistema, el equipo debe estar de acuerdo sobre:
-
-* ¿Qué problema estamos resolviendo?
-* ¿Para quién estamos resolviendo este problema?
-* ¿Qué está dentro y qué está fuera del alcance?
-* ¿Qué significa cada término empresarial y técnico?
-* ¿Cuáles son los límites actuales del proyecto?
-
-## Qué contiene esta sección y cómo completarla
-
-### `overview.md` ⭐
-
-Descripción ejecutiva del proyecto, con una extensión máxima de una página.
-
-Debe incluir:
-
-* Nombre del sistema.
-* Problema que resuelve.
-* Usuarios principales.
-* Tecnologías principales.
-* Estado actual del proyecto.
-
-Formato sugerido:
-
-```text
-## ¿Qué es Servi Te&Pro?
-
-[2-3 oraciones que describan el sistema...]
-
-## Problema que resuelve
-
-[Descripción del problema...]
-
-## Usuarios principales
-
-- Cliente...
-- Técnico...
-- Administrador...
-
-## Stack tecnológico
-
-- Frontend...
-- Backend...
-- Base de datos...
-- Infraestructura...
-```
-
-### `scope.md` ⭐
-
-Define los límites del proyecto:
-
-* Qué está incluido en el alcance.
-* Qué está fuera del alcance.
-* Qué funcionalidades podrían incorporarse en versiones futuras.
-
-### `glossary.md` ⭐
-
-Diccionario de términos empresariales y técnicos utilizados en el proyecto.
-
-### `_template-project-profile.md`
-
-Plantilla para definir el perfil técnico y organizacional del proyecto.
-
-### `_template-scope-declaration.md`
-
-Plantilla para realizar una declaración formal del alcance del proyecto.
-
-## Relación con otras secciones
-
-* Problema definido en `overview.md` ↔ `03-product/vision.md`
-* Alcance ↔ `04-requirements` y `03-product`
-* Términos del glosario ↔ Todos los documentos
-* Stack tecnológico ↔ `05-architecture`
-* Límites del proyecto y supuestos principales ↔ `02-domain` y `05-architecture`
-
-## Orden recomendado para completar esta sección
-
-1. `overview.md`
-2. `scope.md`
-3. `glossary.md`
-
-## Preguntas que esta sección debe responder
-
-* ¿Qué es Servi Te&Pro?
-* ¿Qué problema resuelve?
-* ¿Quiénes son sus usuarios?
-* ¿Cuál es el alcance del proyecto?
-* ¿Qué funcionalidades están incluidas?
-* ¿Qué funcionalidades están excluidas?
-* ¿Qué términos debemos conocer para comprender el proyecto?
-* ¿Cuáles son los límites y supuestos actuales?
-
-## Estado actual
-
-**En construcción**
-
-Servi Te&Pro se encuentra actualmente en las fases de análisis, definición de requerimientos, diseño y construcción.
+| Término                           | Definición                                                                                                                                                      | Sinónimos                                      | Notas                                                                                                             |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Servi Te&Pro**                  | Plataforma digital para solicitar y gestionar servicios de asistencia técnica vehicular, facilitando la comunicación entre clientes y técnicos o profesionales. | Plataforma de asistencia técnica vehicular     | Nombre oficial del proyecto.                                                                                      |
+| **Cliente**                       | Usuario que solicita asistencia técnica para uno de sus vehículos a través de la plataforma.                                                                    | Usuario solicitante                            | Puede registrar uno o varios vehículos.                                                                           |
+| **Técnico**                       | Profesional encargado de atender y realizar servicios de asistencia técnica vehicular.                                                                          | Mecánico, profesional técnico                  | Debe contar con un perfil profesional dentro de la plataforma.                                                    |
+| **Administrador**                 | Usuario encargado de gestionar y controlar la información y configuración del sistema.                                                                          | Admin                                          | Cuenta con permisos administrativos.                                                                              |
+| **Vehículo**                      | Medio de transporte registrado por un cliente que puede requerir asistencia técnica.                                                                            | Automóvil, vehículo automotor                  | Puede estar asociado a múltiples solicitudes de servicio.                                                         |
+| **Asistencia técnica**            | Servicio profesional prestado para atender una avería o necesidad técnica presentada por un vehículo.                                                           | Servicio técnico, asistencia mecánica          | Constituye el objetivo principal de la plataforma.                                                                |
+| **Solicitud de asistencia**       | Registro mediante el cual un cliente solicita ayuda técnica para un vehículo e informa la situación presentada.                                                 | Solicitud de servicio, solicitud de asistencia | Es una entidad central del sistema.                                                                               |
+| **Síntomas**                      | Descripción de las señales o comportamientos observados por el cliente en el vehículo antes o durante la solicitud de asistencia.                               | Manifestaciones de la avería, señales          | Sirven como información de entrada para el diagnóstico preliminar.                                                |
+| **Diagnóstico preliminar**        | Orientación inicial generada por el sistema a partir de la información y síntomas proporcionados por el cliente.                                                | Evaluación preliminar, diagnóstico inicial     | Se basa en reglas definidas y no reemplaza la revisión realizada por el técnico.                                  |
+| **Regla de diagnóstico**          | Condición definida en el sistema que relaciona determinados síntomas o características con una posible causa o tipo de asistencia requerida.                    | Regla técnica, regla de clasificación          | Permite generar el diagnóstico preliminar.                                                                        |
+| **Especialidad**                  | Área técnica en la que un técnico tiene conocimientos y capacidades para prestar determinados servicios.                                                        | Especialidad mecánica, área técnica            | Ejemplos: electricidad automotriz, frenos, suspensión, neumáticos.                                                |
+| **Disponibilidad**                | Estado que indica si un técnico está disponible para recibir o atender solicitudes de asistencia.                                                               | Estado de disponibilidad                       | Puede utilizarse para la asignación o búsqueda de técnicos.                                                       |
+| **Área de cobertura**             | Zona geográfica en la que un técnico puede prestar servicios de asistencia.                                                                                     | Zona de cobertura                              | Permite considerar la ubicación al gestionar una solicitud.                                                       |
+| **Ubicación**                     | Información geográfica asociada a un cliente, vehículo, solicitud o técnico.                                                                                    | Posición geográfica                            | Puede representarse mediante una dirección o coordenadas, según la implementación.                                |
+| **Geolocalización**               | Uso de información geográfica para identificar una ubicación o determinar proximidad entre diferentes puntos.                                                   | Localización geográfica                        | Su implementación dependerá de los requisitos y arquitectura definidos.                                           |
+| **Estado de la solicitud**        | Estado actual de una solicitud de asistencia dentro de su ciclo de vida.                                                                                        | Estado del servicio                            | Ejemplos: creada, aceptada, en proceso, completada o cancelada.                                                   |
+| **Cotización**                    | Propuesta económica presentada por un técnico para realizar un servicio solicitado.                                                                             | Presupuesto, estimación                        | Solo aplica si esta funcionalidad se incluye dentro del alcance del proyecto.                                     |
+| **Calificación**                  | Valoración numérica realizada por el cliente después de recibir una asistencia técnica.                                                                         | Puntuación, valoración                         | Puede utilizarse para registrar la percepción del servicio recibido.                                              |
+| **Reseña**                        | Comentario escrito realizado por el cliente sobre la asistencia técnica recibida.                                                                               | Comentario, opinión                            | Puede asociarse a una calificación.                                                                               |
+| **Perfil profesional**            | Información que describe la experiencia, especialidades y capacidades de un técnico registrado en la plataforma.                                                | Perfil del técnico                             | Permite conocer las capacidades del profesional.                                                                  |
+| **Solicitud creada**              | Estado inicial de una solicitud después de que el cliente registra y envía la información requerida.                                                            | CREATED                                        | Indica que la solicitud fue registrada correctamente.                                                             |
+| **Solicitud aceptada**            | Estado que indica que un técnico ha aceptado atender la solicitud de asistencia.                                                                                | ACCEPTED                                       | Debe utilizarse con un único significado en todos los requerimientos y componentes.                               |
+| **Asistencia en proceso**         | Estado que indica que el técnico se encuentra atendiendo la solicitud o realizando la asistencia correspondiente.                                               | IN_PROGRESS, EN PROCESO                        | Forma parte del ciclo de vida de la solicitud.                                                                    |
+| **Asistencia completada**         | Estado que indica que la atención de la solicitud ha finalizado.                                                                                                | COMPLETED, FINALIZADA                          | Puede habilitar acciones posteriores, como el registro de una calificación, si esta funcionalidad está incluida.  |
+| **Cancelación**                   | Acción mediante la cual una solicitud de asistencia es cancelada antes de su finalización.                                                                      | Cancelación de solicitud                       | Está sujeta a las reglas de negocio definidas para el sistema.                                                    |
+| **API**                           | Interfaz que permite la comunicación entre aplicaciones mediante operaciones y estructuras de datos definidas.                                                  | Application Programming Interface              | Servi Te&Pro podrá exponer una API para la comunicación entre el frontend y backend y para futuras integraciones. |
+| **REST**                          | Estilo arquitectónico utilizado para diseñar servicios web mediante recursos y operaciones HTTP.                                                                | REST API                                       | Podrá utilizarse para implementar la API del sistema.                                                             |
+| **MVP**                           | Primera versión funcional del producto que contiene las capacidades esenciales necesarias para validar la solución propuesta.                                   | Producto mínimo viable                         | Define el alcance inicial de desarrollo.                                                                          |
+| **Base de datos**                 | Sistema utilizado para almacenar y gestionar de manera estructurada la información de Servi Te&Pro.                                                             | Database                                       | El motor de base de datos será definido en la etapa de arquitectura.                                              |
+| **Docker**                        | Tecnología de contenedores utilizada para empaquetar y ejecutar aplicaciones junto con sus dependencias.                                                        | Contenedores, containerización                 | Su utilización dependerá de las decisiones de arquitectura e infraestructura.                                     |
+| **OpenAPI**                       | Especificación utilizada para describir y documentar interfaces de programación de aplicaciones.                                                                | OpenAPI Specification                          | Facilita la documentación y comprensión de la API REST.                                                           |
+| **Rol**                           | Conjunto de permisos y responsabilidades asignados a un usuario dentro del sistema.                                                                             | User Role                                      | Los roles principales son CLIENTE, TÉCNICO y ADMINISTRADOR.                                                       |
+| **Asignación de técnico**         | Proceso mediante el cual una solicitud de asistencia es vinculada con un técnico que puede atenderla de acuerdo con la información disponible.                  | Asignación de servicio                         | Puede considerar especialidad, disponibilidad y ubicación, según las reglas definidas.                            |
+| **Avería**                        | Falla o problema técnico presentado por un vehículo que genera la necesidad de solicitar asistencia.                                                            | Falla, problema mecánico                       | Constituye el motivo de la solicitud de asistencia.                                                               |
+| **Tipo de asistencia**            | Clasificación de la atención requerida de acuerdo con las características y síntomas reportados.                                                                | Tipo de servicio, categoría de asistencia      | Puede utilizarse para orientar la asignación del técnico.                                                         |
+| **Ciclo de vida de la solicitud** | Conjunto de estados y transiciones por los que pasa una solicitud desde su creación hasta su finalización o cancelación.                                        | Lifecycle de la solicitud                      | Debe estar definido mediante reglas de negocio y requerimientos.                                                  |

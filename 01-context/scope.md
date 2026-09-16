@@ -1,109 +1,158 @@
-# System Scope
+# Servi Te&Pro — Alcance
 
-> **Why this document exists:** Scope prevents scope creep and aligns expectations.
-> It is equally important to define what the system does NOT do as what it does.
-> Review this document at the start of each planning cycle.
+## Límite del sistema
 
----
+Servi Te&Pro es una plataforma web orientada a la gestión de solicitudes de asistencia técnica vehicular en el departamento del Huila, Colombia.
 
-## In Scope
+Su responsabilidad principal es facilitar el proceso mediante el cual un cliente reporta una avería de su vehículo, proporciona información sobre los síntomas observados, recibe una orientación diagnóstica preliminar y puede ser conectado o asignado a un técnico o profesional que pueda atender la solicitud.
 
-What the system **DOES build and maintain**:
+El flujo principal del sistema contempla:
 
-### MVP Features
+**Cliente → Solicitud → Síntomas → Diagnóstico preliminar → Técnico → Asistencia → Resultado**
 
-| # | Feature | Description | Responsible service |
-|---|---------|-------------|---------------------|
-| 1 | [Feature A] | [Brief description] | [service-name] |
-| 2 | [Feature B] | [Brief description] | [service-name] |
-| 3 | [Feature C] | [Brief description] | [service-name] |
-
-### Included integrations
-
-| External system | Integration type | Purpose |
-|----------------|-----------------|---------|
-| [System A] | REST API / Webhook / SDK | [purpose] |
-| [System B] | SFTP / Database | [purpose] |
-
-### Environments being built
-
-| Environment | Purpose |
-|-------------|---------|
-| Local | Development on the developer's machine |
-| Development (dev) | Continuous integration and development testing |
-| Staging | Pre-production, PO acceptance testing |
-| Production | Production environment |
+El diagnóstico preliminar constituye una orientación basada en las reglas definidas en el sistema y no reemplaza la evaluación técnica realizada directamente por el profesional.
 
 ---
 
-## Out of Scope
+## Incluido en el MVP
 
-What the system **does NOT build** in this version and why:
+### Gestión de usuarios
 
-| # | What is out of scope | Reason | Future version? |
-|---|---------------------|--------|----------------|
-| 1 | [Feature X] | [Out of budget / Not MVP / Uses external system] | Yes — H2 2024 |
-| 2 | [Integration with Y] | [Provider has no public API yet] | Pending provider |
-| 3 | [Module Z] | [Another team builds it] | N/A |
+* Registro de usuarios.
+* Inicio de sesión.
+* Recuperación de contraseña, si se incluye en la implementación inicial.
+* Gestión de roles.
+* Gestión básica del perfil de usuario.
 
-### What another system / team handles (and why not us)
+### Gestión de clientes
 
-| Feature | Who builds it | Why not us |
-|---------|--------------|-----------|
-| [SSO Authentication] | Central IAM team | Reuse existing implementation |
-| [Financial reports] | BI system / Analytics team | Outside the core domain |
+* Registro y actualización del perfil del cliente.
+* Registro de vehículos.
+* Consulta de vehículos registrados.
+* Gestión de solicitudes de asistencia.
+* Consulta del historial de solicitudes.
+* Consulta del estado de las solicitudes.
+
+### Gestión de técnicos
+
+* Registro de técnicos o profesionales.
+* Gestión del perfil profesional.
+* Registro de especialidades.
+* Registro de experiencia profesional.
+* Registro de información profesional relevante.
+* Configuración de disponibilidad.
+* Definición del área de cobertura.
+
+### Gestión de vehículos
+
+* Registro de información básica del vehículo.
+* Asociación del vehículo con su propietario.
+* Consulta y actualización de la información del vehículo.
+* Asociación del vehículo con las solicitudes de asistencia.
+
+### Gestión de solicitudes de asistencia
+
+* Creación de solicitudes por parte del cliente.
+* Asociación de la solicitud con un cliente.
+* Asociación de la solicitud con un vehículo.
+* Registro de la avería reportada.
+* Registro de síntomas y características observadas.
+* Registro de información adicional proporcionada por el cliente.
+* Registro de ubicación de la solicitud cuando sea necesario.
+* Adjuntar fotografías como evidencia, si esta funcionalidad se encuentra contemplada en la implementación.
+* Consulta y gestión de solicitudes por parte del técnico.
+* Asignación o aceptación de una solicitud por parte de un técnico.
+* Gestión del estado de la solicitud.
+* Registro de la finalización de la asistencia.
+
+### Diagnóstico preliminar
+
+* Análisis de los síntomas registrados por el cliente.
+* Aplicación de reglas de diagnóstico previamente definidas.
+* Generación de una orientación diagnóstica preliminar.
+* Identificación de posibles causas o tipos de avería.
+* Identificación de la especialidad técnica que podría ser requerida.
+* Presentación del diagnóstico preliminar al técnico como información de apoyo.
+
+El diagnóstico generado por el sistema debe considerarse una orientación inicial. La confirmación de la avería corresponde al técnico durante la atención del vehículo.
+
+### Gestión de la asignación
+
+* Identificación de técnicos que puedan atender una solicitud.
+* Consideración de la especialidad requerida.
+* Consideración de la disponibilidad del técnico.
+* Consideración del área de cobertura.
+* Vinculación de la solicitud con el técnico seleccionado o que la acepte.
+
+Los criterios específicos de asignación serán definidos posteriormente como reglas de negocio.
+
+### Gestión de asistencia
+
+* Actualización del estado de la solicitud durante la atención.
+* Registro de inicio de la asistencia.
+* Registro del resultado de la atención.
+* Registro del diagnóstico realizado por el técnico.
+* Registro de observaciones técnicas relevantes.
+* Consulta del historial de asistencia.
+
+### Administración
+
+* Gestión de usuarios.
+* Gestión de técnicos.
+* Gestión de especialidades.
+* Gestión de solicitudes.
+* Gestión de reglas de diagnóstico.
+* Gestión de estados y configuraciones básicas.
+* Consulta de información necesaria para la administración del sistema.
+* Registro de acciones administrativas críticas cuando sea requerido.
+
+### Geolocalización
+
+* Registro de la ubicación asociada a una solicitud de asistencia.
+* Registro del área de cobertura del técnico.
+* Consideración de la ubicación para la búsqueda o asignación de técnicos.
+* Consulta de información geográfica necesaria para el funcionamiento del servicio.
+
+La implementación específica de funcionalidades de geolocalización se definirá durante el diseño de la arquitectura.
 
 ---
 
-## Scope assumptions
+## Fuera del alcance del MVP
 
-> These assumptions are taken to be true. If they change, the scope must be renegotiated.
+Las siguientes funcionalidades no forman parte del primer MVP de Servi Te&Pro:
 
-| # | Assumption | Consequence if false |
-|---|-----------|---------------------|
-| 1 | External system [X] has an available REST API | We would have to build the integration differently |
-| 2 | Users use [language / device / etc.] | The UX design would change |
-| 3 | Initial data volume is < [N] records | The database strategy might change |
+* Gestión hotelera.
+* Gestión de habitaciones.
+* Reservas de alojamiento.
+* Gestión de estadías.
+* Planificación turística.
+* Asistencia turística inteligente.
+* Recomendaciones turísticas.
+* Guías turísticas.
+* Marketplace de repuestos.
+* Venta directa de productos físicos.
+* Sistema completo de contratación laboral.
+* Aplicaciones móviles nativas.
+* Expansión fuera del departamento del Huila.
+* Soporte multidioma.
+* Inteligencia artificial avanzada.
+* Diagnóstico automático mediante análisis de imágenes.
+* Realidad aumentada.
+* Predicción avanzada de demanda.
+* Precios dinámicos.
+* Integración con compañías de seguros.
+* Integración con servicios externos que no sean necesarios para el funcionamiento del MVP.
 
----
-
-## Constraints
-
-| Type | Description |
-|------|-------------|
-| **Time** | [MVP must be ready in X weeks / by date Y] |
-| **Budget** | [N development hours / X USD of infrastructure] |
-| **Technology** | [Must use the corporate stack: Java + PostgreSQL] |
-| **Regulatory** | [Must comply with X regulation / certification] |
-| **Team** | [N developers available] |
-
----
-
-## External dependencies
-
-| Dependency | Team / Provider | Required date | Status |
-|-----------|----------------|--------------|--------|
-| API of [System X] | [Team name] | [date] | 🟢 Available |
-| Credentials for [Provider Y] | [Contact] | [date] | 🟡 In progress |
-| [Infrastructure Z] | DevOps | [date] | 🔴 Pending |
+Estas funcionalidades podrán evaluarse como posibles evoluciones futuras, pero no deben incorporarse al MVP sin una decisión formal de alcance.
 
 ---
 
-## How to update the scope
+## Pagos
 
-The scope can change, but the change has a process:
+Los pagos no forman parte del núcleo funcional del MVP.
 
-1. Document the proposed change in this file
-2. Evaluate the impact on schedule and effort
-3. Obtain approval from the Product Owner and Tech Lead
-4. Update the roadmap in `03-product/vision.md`
-5. Create or update HUs in `04-requirements/user-stories.md`
+El sistema podrá quedar preparado para registrar información relacionada con el estado de un pago cuando sea necesario para el flujo de asistencia.
 
----
+La integración con una pasarela de pagos externa podrá considerarse en una versión futura.
 
-## Correlations
-
-- Vision and roadmap → `03-product/vision.md`
-- Term glossary → `01-context/glossary.md`
-- System overview → `01-context/overview.md`
-- Scope-related risks → `15-project-control/risks.md`
+La implementación de pagos deberá tratarse como una funcionalidad independiente y requerirá la definición de sus correspondientes requisitos funcionales, de
